@@ -5,14 +5,27 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #f5f5eb;
+  /* overflow-x: hidden; */
+  width: 100%;
+  margin: 0 auto;
 }
 
 body {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1920px;
+  min-width: 320px;
+  /* width: 100%; */
+  min-height: 100vh;
   font-family: 'Tilt Warp', sans-serif;
   font-size: 1em;
-  background: #f5f5eb;
 }
 
 .wrapper-bayan {
@@ -48,25 +61,42 @@ body {
 .accordion__line {
   width: 87.5em;
   height: 0.125em;
+  /* max-width: 87.5em;
+  max-height: 0.125em;
+  width: 100%;
+  height: 100%; */
   background: black;
   margin-left: 1.25%;
 }
 
-.wrapper__accordion__header {
+.wrapper__accordion {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
+  flex-direction: column;
 }
 
-.wrapper__accordion__header:hover {
+.wrapper__accordion:hover {
   cursor: pointer;
 }
 
-.accordion__header {
+.accordion__header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.56% 1.25%;
   font-size: 2.5em;
   letter-spacing: .1rem;
   /* padding: 25px 20px; */
-  padding: 1.56% 1.25%;
 }
 
 .accordion__button__xmark,
@@ -85,18 +115,18 @@ body {
   display: none;
 } */
 
-.wrapper__accordion__header:hover>.wrapper__accordion__button>.accordion__button__xmark {
+.wrapper__accordion:hover>.accordion__header>.wrapper__accordion__button>.accordion__button__angle {
   display: none;
   width: 0%;
   height: 0%;
 }
 
-/* .wrapper__accordion__header:hover>.wrapper__accordion__button>.accordion__button__angle {
+/* .wrapper__accordion:hover>.wrapper__accordion__button>.accordion__button__angle {
   display: block;
 } */
 
-.wrapper-accordion:hover>.accordion__item>.wrapper__accordion__header>.wrapper__accordion__button>.accordion__button__xmark,
-.wrapper__accordion__header:hover>.wrapper__accordion__button>.accordion__button__angle {
+.wrapper-accordion:hover>.accordion__item>.wrapper__accordion>.accordion__header>.wrapper__accordion__button>.accordion__button__angle,
+.wrapper__accordion:hover>.accordion__header>.wrapper__accordion__button>.accordion__button__xmark {
   display: block;
 }
 
@@ -107,7 +137,10 @@ body {
 }
 
 .accordion__item__meme {
-  margin: 1% 0%;
+  
+  /* height: 0px; */
+  /* overflow: hidden; */
+  
 }
 
 .meme__copy-and-paste,
@@ -115,30 +148,74 @@ body {
 .meme__work-life-balance,
 .meme__where-is-js,
 .meme__relax {
-  width: 31vw;
-  height: 31vw;
+  /* width: 31vw;
+  height: 31vw; */
+  /* height: 27.1vw;
+  width: 27.1vw; */
+  width: 100%;
+  /* height: auto; */
+  
 }
 
 .meme__copy-and-paste {
-  background: url("../assets/img/You_can`t_just_copy_and_paste_CSS.png");
+  /* background: url("../assets/img/You_can`t_just_copy_and_paste_CSS.png"); */
 
 }
 
 .meme__keep-calm {
-  background: url("../assets/img/Keep_calm_and_carry_on.png");
+  /* background: url("../assets/img/Keep_calm_and_carry_on.png"); */
 
 }
 
 .meme__work-life-balance {
-  background: url("../assets/img/Work-life_balance.png");
+  /* background: url("../assets/img/Work-life_balance.png"); */
 }
 
 .meme__where-is-js {
-  background: url("../assets/img/Dude\,_where_is_JS.png");
+  /* background: url("../assets/img/Dude\,_where_is_JS.png"); */
 }
 
 .meme__relax {
-  background: url("../assets/img/Relax_and_take_it_easy.png");
+  /* background: url("../assets/img/Relax_and_take_it_easy.png"); */
+}
+
+.accordion__item input{
+  display: none;
+}
+.meme__checked{
+  /* overflow: hidden;
+  height: 0;
+  transition: 0.6s; */
+  overflow: hidden;
+  height: 0;
+  transition: 0.6s;
+}
+.wrapper-accordion input:checked ~ .wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked {
+  /* height: max-content; */
+  height: 40.1vh;
+  /* transition: 0.6s; */
+}
+
+.accordion__item:hover>.wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked{
+  height: 40.1vh;
 }
 
 /* /////////////////////////////////////// */
+@media (max-width: 1920px) {
+  .bayan__header-bayan {}
+  .accordion__line{
+    /* width: 87.5em;
+    height: 0.125em; */
+    /* max-width: 87.5em;
+    max-height: 0.125em;
+    width: 100%;
+    height: 100%; */
+    /* margin-left: 1.25%; */
+    /* width: calc(20em + (87.5 - 20)* ((100vw - 320px) / (1920 - 320))); */
+  }
+  .accordion__header {
+    /* font-size: 2.5em;
+  letter-spacing: .1rem;
+  padding: 1.56% 1.25%; */
+  }
+}
