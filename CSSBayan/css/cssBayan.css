@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Tilt Warp';
+  src: url("../assets/fonts/TiltWarp-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tilt Warp', sans-serif;
+  font-size: 1em;
+  background: #f5f5eb;
+}
+
+.wrapper-bayan {
+  display: flex;
+  /* padding: 60px 150px; */
+  padding: 3.75% 9.4%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bayan__header-bayan {
+  font-family: 'Tilt Warp', sans-serif;
+  /* padding-left: 20px; */
+  padding-left: 1.5%;
+  font-size: 4em;
+  letter-spacing: .4rem;
+}
+
+.wrapper-accordion {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-top: 1.875%;
+  color: #0159d9;
+}
+
+.wrapper-accordion:hover {
+  color: rgb(0, 0, 0);
+}
+
+.accordion__item {}
+
+.accordion__line {
+  width: 87.5em;
+  height: 0.125em;
+  background: black;
+  margin-left: 1.25%;
+}
+
+.wrapper__accordion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper__accordion__header:hover {
+  cursor: pointer;
+}
+
+.accordion__header {
+  font-size: 2.5em;
+  letter-spacing: .1rem;
+  /* padding: 25px 20px; */
+  padding: 1.56% 1.25%;
+}
+
+.accordion__button__xmark,
+.accordion__button__angle {
+  /* width: 20px;
+  height: 20px;
+  background: blue; */
+  /* fill: #0159d9; */
+  fill: rgb(0, 0, 0);
+  display: none;
+}
+
+/* 
+.accordion__button__angle {
+  fill: rgb(247, 0, 255);
+  display: none;
+} */
+
+.wrapper__accordion__header:hover>.wrapper__accordion__button>.accordion__button__xmark {
+  display: none;
+  width: 0%;
+  height: 0%;
+}
+
+/* .wrapper__accordion__header:hover>.wrapper__accordion__button>.accordion__button__angle {
+  display: block;
+} */
+
+.wrapper-accordion:hover>.accordion__item>.wrapper__accordion__header>.wrapper__accordion__button>.accordion__button__xmark,
+.wrapper__accordion__header:hover>.wrapper__accordion__button>.accordion__button__angle {
+  display: block;
+}
+
+.wrapper__accordion__content {
+  display: flex;
+  justify-content: center;
+  /* padding-bottom: 20px; */
+}
+
+.accordion__item__meme {
+  margin: 1% 0%;
+}
+
+.meme__copy-and-paste,
+.meme__keep-calm,
+.meme__work-life-balance,
+.meme__where-is-js,
+.meme__relax {
+  width: 31vw;
+  height: 31vw;
+}
+
+.meme__copy-and-paste {
+  background: url("../assets/img/You_can`t_just_copy_and_paste_CSS.png");
+
+}
+
+.meme__keep-calm {
+  background: url("../assets/img/Keep_calm_and_carry_on.png");
+
+}
+
+.meme__work-life-balance {
+  background: url("../assets/img/Work-life_balance.png");
+}
+
+.meme__where-is-js {
+  background: url("../assets/img/Dude\,_where_is_JS.png");
+}
+
+.meme__relax {
+  background: url("../assets/img/Relax_and_take_it_easy.png");
+}
+
+/* /////////////////////////////////////// */
