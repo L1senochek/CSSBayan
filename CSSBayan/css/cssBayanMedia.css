@@ -1,0 +1,44 @@
+@media (max-width: 820px) {
+  .wrapper-bayan {
+    padding: 2.75% 7.4%;
+  }
+
+  .wrapper-accordion {
+    width: 70vw;
+  }
+
+  .bayan__header-bayan {
+    font-size: 3em;
+    letter-spacing: .3rem;
+  }
+
+  .header {
+    font-size: 2em;
+    letter-spacing: .1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper-bayan {
+    padding: 2.75% 5.4%;
+  }
+
+  .wrapper-accordion {
+    width: 80vw;
+  }
+
+  .bayan__header-bayan {
+    font-size: 1.5em;
+    letter-spacing: .2rem;
+  }
+
+  .header {
+    font-size: 1em;
+    letter-spacing: .1rem;
+  }
+
+  .wrapper-accordion input:checked ~ .wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked {
+    height: 30vh;
+    width: 30vh;
+  }
+}
