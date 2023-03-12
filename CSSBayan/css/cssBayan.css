@@ -5,13 +5,11 @@
 
 * {
   box-sizing: border-box;
-  
 }
 
 html {
   scroll-behavior: smooth;
   background: #f5f5eb;
-  /* overflow-x: hidden; */
   width: 100%;
   margin: 0 auto;
 }
@@ -22,7 +20,8 @@ body {
   padding: 0;
   max-width: 1920px;
   min-width: 320px;
-  /* width: 100%; */
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   font-family: 'Tilt Warp', sans-serif;
   font-size: 1em;
@@ -30,15 +29,18 @@ body {
 
 .wrapper-bayan {
   display: flex;
-  /* padding: 60px 150px; */
   padding: 3.75% 9.4%;
   flex-direction: column;
   align-items: flex-start;
 }
 
+.wrapper-accordion:hover,
+.wrapper-bayan:hover {
+  transform: translate(0);
+}
+
 .bayan__header-bayan {
   font-family: 'Tilt Warp', sans-serif;
-  /* padding-left: 20px; */
   padding-left: 1.5%;
   font-size: 4em;
   letter-spacing: .4rem;
@@ -48,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  width: 60vw;
   padding-top: 1.875%;
   color: #0159d9;
 }
@@ -56,15 +59,10 @@ body {
   color: rgb(0, 0, 0);
 }
 
-.accordion__item {}
-
 .accordion__line {
   width: 87.5em;
   height: 0.125em;
-  /* max-width: 87.5em;
-  max-height: 0.125em;
   width: 100%;
-  height: 100%; */
   background: black;
   margin-left: 1.25%;
 }
@@ -80,67 +78,34 @@ body {
   cursor: pointer;
 }
 
-.accordion__header{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
+.accordion__header,
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.accordion__header {
+  flex-wrap: nowrap;
+}
+
+.header {
   padding: 1.56% 1.25%;
   font-size: 2.5em;
   letter-spacing: .1rem;
-  /* padding: 25px 20px; */
 }
 
 .accordion__button__xmark,
 .accordion__button__angle {
-  /* width: 20px;
-  height: 20px;
-  background: blue; */
-  /* fill: #0159d9; */
+  width: 1.5vh;
   fill: rgb(0, 0, 0);
   display: none;
-}
-
-/* 
-.accordion__button__angle {
-  fill: rgb(247, 0, 255);
-  display: none;
-} */
-
-.wrapper__accordion:hover>.accordion__header>.wrapper__accordion__button>.accordion__button__angle {
-  display: none;
-  width: 0%;
-  height: 0%;
-}
-
-/* .wrapper__accordion:hover>.wrapper__accordion__button>.accordion__button__angle {
-  display: block;
-} */
-
-.wrapper-accordion:hover>.accordion__item>.wrapper__accordion>.accordion__header>.wrapper__accordion__button>.accordion__button__angle,
-.wrapper__accordion:hover>.accordion__header>.wrapper__accordion__button>.accordion__button__xmark {
-  display: block;
 }
 
 .wrapper__accordion__content {
   display: flex;
   justify-content: center;
-  /* padding-bottom: 20px; */
-}
-
-.accordion__item__meme {
-  
-  /* height: 0px; */
-  /* overflow: hidden; */
-  
 }
 
 .meme__copy-and-paste,
@@ -148,74 +113,83 @@ body {
 .meme__work-life-balance,
 .meme__where-is-js,
 .meme__relax {
-  /* width: 31vw;
-  height: 31vw; */
-  /* height: 27.1vw;
-  width: 27.1vw; */
-  width: 100%;
-  /* height: auto; */
-  
+  width: 0;
 }
 
-.meme__copy-and-paste {
-  /* background: url("../assets/img/You_can`t_just_copy_and_paste_CSS.png"); */
-
-}
-
-.meme__keep-calm {
-  /* background: url("../assets/img/Keep_calm_and_carry_on.png"); */
-
-}
-
-.meme__work-life-balance {
-  /* background: url("../assets/img/Work-life_balance.png"); */
-}
-
-.meme__where-is-js {
-  /* background: url("../assets/img/Dude\,_where_is_JS.png"); */
-}
-
-.meme__relax {
-  /* background: url("../assets/img/Relax_and_take_it_easy.png"); */
-}
-
-.accordion__item input{
+.accordion__item input {
   display: none;
 }
-.meme__checked{
-  /* overflow: hidden;
-  height: 0;
-  transition: 0.6s; */
+
+.meme__checked {
   overflow: hidden;
   height: 0;
   transition: 0.6s;
 }
-.wrapper-accordion input:checked ~ .wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked {
-  /* height: max-content; */
-  height: 40.1vh;
-  /* transition: 0.6s; */
+
+.wrapper-accordion input:checked ~ .wrapper__accordion>.accordion__header>.header {
+  color: black;
 }
 
-.accordion__item:hover>.wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked{
+.accordion__item:hover>.wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked,
+.wrapper-accordion input:checked ~ .wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked {
   height: 40.1vh;
+  width: 40.1vh;
+}
+
+.wrapper__accordion:hover>.accordion__header>.wrapper__accordion__button>.accordion__button__angle,
+.wrapper-accordion input:checked ~ .wrapper__accordion>.accordion__header>.wrapper__accordion__button>.accordion__button__angle {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.wrapper-accordion:hover>.accordion__item>.wrapper__accordion>.accordion__header>.wrapper__accordion__button>.accordion__button__angle,
+.wrapper__accordion:hover>.accordion__header>.wrapper__accordion__button>.accordion__button__xmark,
+.wrapper-accordion:hover input:checked ~ .wrapper__accordion>.accordion__header>.wrapper__accordion__button>.accordion__button__xmark {
+  display: block;
+}
+
+.accordion__item:hover>.wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked {
+  transform: scale(1);
+  transform-origin: center;
+  opacity: 1;
 }
 
 /* /////////////////////////////////////// */
-@media (max-width: 1920px) {
-  .bayan__header-bayan {}
-  .accordion__line{
-    /* width: 87.5em;
-    height: 0.125em; */
-    /* max-width: 87.5em;
-    max-height: 0.125em;
-    width: 100%;
-    height: 100%; */
-    /* margin-left: 1.25%; */
-    /* width: calc(20em + (87.5 - 20)* ((100vw - 320px) / (1920 - 320))); */
+@media (max-width: 820px) {
+  .wrapper-bayan {
+    padding: 2.75% 7.4%;
   }
-  .accordion__header {
-    /* font-size: 2.5em;
-  letter-spacing: .1rem;
-  padding: 1.56% 1.25%; */
+
+  .bayan__header-bayan {
+    font-size: 3em;
+    letter-spacing: .3rem;
+  }
+
+  .header {
+    font-size: 2em;
+    letter-spacing: .1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper-bayan {
+    padding: 2.75% 5.4%;
+  }
+
+  .bayan__header-bayan {
+    font-size: 1.5em;
+    letter-spacing: .2rem;
+  }
+
+  .header {
+    font-size: 1em;
+    letter-spacing: .1rem;
+  }
+
+  .wrapper-accordion input:checked ~ .wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked,
+  .accordion__item:hover>.wrapper__accordion>.wrapper__accordion__content>.accordion__item__meme>.meme__checked {
+    height: 30vh;
+    width: 30vh;
   }
 }
